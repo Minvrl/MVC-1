@@ -1,0 +1,22 @@
+﻿@using MVC_1.Models
+@using MVC_1.Controllers
+
+@{
+    Product product = ViewBag.Product;
+}
+
+
+@{
+     string Clr(float price) {
+        if (product.Price > 10) return "chartreuse";
+        else return "red";
+    }
+}
+
+<h1>Product Details</h1>
+<div>
+    <h2>ID: @product.Id</h2>
+    <p style="font-size:20px;">Name: @product.Name</p>
+    <p style="font-size:20px;">Price: <span style="color : @Clr(product.Price);">@product.Price</span></p>
+    <p style="font-size:20px;">Category: @product.Category</p>
+</div>

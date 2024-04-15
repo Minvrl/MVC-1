@@ -1,0 +1,20 @@
+﻿@using MVC_1.Models
+
+@{
+	List<Product> products = ViewBag.Products;
+}
+
+
+<h1>Products</h1>
+
+<ul>
+	@{
+		foreach (var item in products)
+		{
+			<li> <a style="text-decoration:none; color:midnightblue; font-size:25px;" href="@Url.Action("Detail", "Home", new { id = item.Id })">@item.Id - @item.Name</a>  </li>
+		}
+	}
+	
+</ul>
+
+<h3>Click on a product for more info !</h3>
